@@ -3,7 +3,7 @@ import { languageMappings } from './constants';
 import { validateLanguageCode, translatePage } from './utils';
 
 
-const TranslatorWidget = ({ sourceLanguageCode }) => {
+const TranslatorWidget = ({ sourceLanguageCode, ...props }) => {
     if (!validateLanguageCode(sourceLanguageCode)) {
         throw new Error('Invalid source language code');
     }
@@ -14,17 +14,13 @@ const TranslatorWidget = ({ sourceLanguageCode }) => {
         translatePage({sourceLanguageCode, targetLanguageCode: value});
     }
     return (
-        <div>
-            <label htmlFor="languages">Change Your Language</label>
-            
-            <select name="languages" id="languages" value={targetLanguageCode} onChange={handleLanguageChange}>
-                {
-                    Object.keys(languageMappings).map((key, index) => {
-                        return <option value={languageMappings[key]} key={index}>{key}</option>
-                    })
-                }
-            </select>
-        </div>
+        <select name="languages" id="languages" value={targetLanguageCode} onChange={handleLanguageChange} {...props}>
+            {
+                Object.keys(languageMappings).map((key, index) => {
+                    return <option value={languageMappings[key]} key={index}>{key}</option>
+                })
+            }
+        </select>
     );
 }
 
