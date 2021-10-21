@@ -1,4 +1,6 @@
-const languageMappings = {
+export const defaultLanguage = 'en';
+
+export const languageMappings = {
     Afrikaans: "af",
     Albanian: "sq",
     Amharic: "am",
@@ -113,5 +115,3 @@ const languageMappings = {
     Yoruba: "yo",
     Zulu: "zu",
 };
-
-export default languageMappings;

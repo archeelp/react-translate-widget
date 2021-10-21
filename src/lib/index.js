@@ -1,3 +1,4 @@
-import TranslatorWidget from "./components/TranslatorWidget";
+import TranslatorWidget from "./TranslatorWidget";
 
-export default {TranslatorWidget};
+
+export default TranslatorWidget;

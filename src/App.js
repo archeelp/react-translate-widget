@@ -1,6 +1,5 @@
 import './App.css';
-import components from './lib/components';
-const {TranslatorWidget} = components;
+import TranslatorWidget from './lib';
 
 function App() {
   return (
